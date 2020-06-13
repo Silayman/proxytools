@@ -17,7 +17,7 @@ class formatproxy:
 					ip, port = proxy_parts[0], proxy_parts[1]
 					request_proxy = {'http': 'http://{}:{}'.format(ip, port),
 								'https': 'https://{}:{}'.format(ip, port)}
-				elif len(proxy_parts) == 5:
+				elif "http" in proxy_parts:
 					ip, port, user, password = proxy_parts[1], proxy_parts[2], proxy_parts[3], proxy_parts[4]
 					ip = ip.split("/")[2]
 					request_proxy = {'http': 'http://{}:{}@{}:{}'.format(user, password, ip, port),
