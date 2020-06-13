@@ -10,6 +10,10 @@ class TestFormatProxy(unittest.TestCase):
         returned_output = proxytools.formatproxy("162.10.10.10:3128:username:password").format_request()
         expected_output = {'http': 'http://username:password@162.10.10.10:3128', 'https': 'https://username:password@162.10.10.10:3128'}
         self.assertEqual(returned_output, expected_output)
+    def test_formatproxy_urlproxy(self):
+        returned_output = proxytools.formatproxy("http://test.residentialproxyexample.com:492123:username:password").format_request()
+        expected_output = {'http': 'http://username:password@test.residentialproxyexample.com:492123', 'https': 'https://username:password@test.residentialproxyexample.com:492123'}
+        self.assertEqual(returned_output, expected_output)
 
 
 
