@@ -1,4 +1,4 @@
-from proxyerrors import InvalidProxy
+from .proxyerrors import InvalidProxy
 
 class formatproxy:
 	def __init__(self,proxy):
